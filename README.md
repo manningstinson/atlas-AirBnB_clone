@@ -9,13 +9,10 @@ This project is a a collaborative effort between the below authors. You can lear
 [Manning Stinson](https://github.com/manningstinson) |
 [Brandon Montezuma](https://github.com/bmontezuma)
 
-## Files
-- Description of the project
-- This file lists all contributors to the repository.
-- Description of the command interpreter:
-- How to start it
-- How to use it
-- Examples
+## How to start the project
+## How to use it
+## Command Interpreter:
+## Examples
 
 This project will be fully documented at the airbnb clone wiki. You can access it here:<br>
 [airbnb clone wiki](https://github.com/manningstinson/atlas-AirBnB_clone/wiki/airbnb-clone-wiki)
