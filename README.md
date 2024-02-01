@@ -1,7 +1,6 @@
 ![airbnb-project-header](https://github.com/manningstinson/atlas-AirBnB_clone/assets/104523090/d4c252f6-6cf0-462d-8d94-a67bcdbdf4b7)
 
 # Atlas School - airbnb clone
-bnb clone project
 In this six part project, two team members are creating a clone of the airbnb travel website. The first project will be a console, or shell to access the project from the terminal/command line.
 
 ## Authors
