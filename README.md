@@ -11,7 +11,7 @@ This project is a a collaborative effort between the below authors. You can lear
 
 ## How to start the project
 ## How to use it
-## Command Interpreter:
+## Command Interpreter
 ## Examples
 
 This project will be fully documented at the airbnb clone wiki. You can access it here:<br>
