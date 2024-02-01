@@ -3,7 +3,7 @@ In this six part project, two team members are creating a clone of the airbnb tr
 
 ### This file lists all contributors to the repository.
 
-# This project was a a collaborative effort between the below authors. You can visit their profiles by visiting the links below.<br>
+### This project was a a collaborative effort between the below authors. You can visit their profiles by visiting the links below.<br>
 
 ## This file lists all contributors to the repository.
 [Manning Stinson](https://github.com/manningstinson) |
