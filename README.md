@@ -14,9 +14,17 @@ This project is a a collaborative effort between the below authors. You can lear
 ## Command Interpreter
 A command interpreter is a tool that allows you to interact with your project by entering commands. It's like a specialized interface where you can perform actions such as creating new users or places, retrieving objects, performing operations on objects, updating attributes, and destroying objects.
 
+If you want to create a new user, you could use the following:
+
 ```pythoh
 create User
 ```
+or if you want to retrieve objects you could use the following:
+
+```python
+retrieve User from database
+```
+
 ## Examples
 
 This project will be fully documented at the airbnb clone wiki. You can access it here:<br>
