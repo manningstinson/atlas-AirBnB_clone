@@ -28,4 +28,4 @@ retrieve User from database
 ## Examples
 
 This project will be fully documented at the airbnb clone wiki. You can access it here:<br>
-[airbnb-clone-wiki](https://github.com/manningstinson/atlas-AirBnB_clone/wiki/Part-1-%7C-airbnb-clone-%7C-The-Console)
+[airbnb-clone-wiki](https://github.com/manningstinson/atlas-AirBnB_clone/wiki)
