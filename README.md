@@ -1,4 +1,5 @@
-![airbnb clone](https://github.com/manningstinson/atlas-AirBnB_clone/assets/104523090/724d5332-7c39-417f-9ab4-175a9197f9ac)
+
+![airbnb clone](https://github.com/manningstinson/atlas-AirBnB_clone/assets/104523090/2293c7ad-a821-417a-8acb-dc2c6961d06b)
 
 # Atlas School - airbnb clone
 In this six part project, two team members are creating a clone of the airbnb travel website. The first project will be a console, or shell to access the project from the terminal/command line.
