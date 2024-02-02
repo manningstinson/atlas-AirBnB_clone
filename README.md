@@ -28,4 +28,4 @@ retrieve User from database
 
 ## Full Project Documenation
 This project will be fully documented at the airbnb clone wiki. You can access it here:<br>
-[airbnb-clone-wiki](https://github.com/manningstinson/atlas-AirBnB_clone/wiki)
+[airbnb-clone-wiki](https://github.com/manningstinson/atlas-AirBnB_clone/wiki/Home-%7C-airbnb-clone)
