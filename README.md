@@ -26,7 +26,6 @@ or if you want to retrieve objects you could use the following:
 retrieve User from database
 ```
 
-## Examples
-
+## Full Project Documenation
 This project will be fully documented at the airbnb clone wiki. You can access it here:<br>
 [airbnb-clone-wiki](https://github.com/manningstinson/atlas-AirBnB_clone/wiki)
