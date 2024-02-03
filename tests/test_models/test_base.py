@@ -2,10 +2,10 @@
 """
 Unittests for BaseModel class
 """
-import sys
 import os
 import unittest
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
+from datetime import datetime
 
 # # Get the current script's directory
 # script_dir = os.path.dirname(os.path.realpath(__file__))
