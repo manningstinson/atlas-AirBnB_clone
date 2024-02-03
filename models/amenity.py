@@ -51,4 +51,3 @@ class Amenity(BaseModel):
         d = super().to_dict()
         d['name'] = self.name
         return d
-    
