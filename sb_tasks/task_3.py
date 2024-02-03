@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-"""
-Module containing BaseModel class.
-"""
 import uuid
 from datetime import datetime
 
@@ -9,22 +6,28 @@ from datetime import datetime
 class BaseModel:
     """
     BaseModel class for common attributes/methods.
+
+
+    Attributes:
+        id (str): Unique identifier for the instance.
+        created_at (datetime): Datetime representing the creation time.
+        updated_at (datetime): Datetime representing the last update time.
     """
 
     def __init__(self, *args, **kwargs):
         """Initialize instance."""
+        self.id = str(uuid.uuid4())
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
+
         if kwargs:
             for k, v in kwargs.items():
                 if k != '__class__':
-                    if k == 'created_at' or k == 'updated_at':
+                    if k in ('created_at', 'updated_at'):
                         setattr(self, k, datetime.strptime(
                             v, '%Y-%m-%dT%H:%M:%S.%f'))
                     else:
                         setattr(self, k, v)
-            if 'id' not in kwargs:
-                self.id = str(uuid.uuid4())
-            if 'created_at' not in kwargs:
-                self.created_at = self.updated_at = datetime.now()
 
     def __str__(self):
         """Return string representation."""
