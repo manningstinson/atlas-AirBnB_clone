@@ -1,12 +1,18 @@
 #!/usr/bin/python3
+"""
+BaseModel class for common attributes/methods.
+"""
+
 import uuid
 from datetime import datetime
+
+
+storage = None
 
 
 class BaseModel:
     """
     BaseModel class for common attributes/methods.
-
 
     Attributes:
         id (str): Unique identifier for the instance.
@@ -28,6 +34,8 @@ class BaseModel:
                             v, '%Y-%m-%dT%H:%M:%S.%f'))
                     else:
                         setattr(self, k, v)
+        if not kwargs:
+            storage.new(self)
 
     def __str__(self):
         """Return string representation."""
@@ -37,6 +45,7 @@ class BaseModel:
     def save(self):
         """Update updated_at attribute."""
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """Return dictionary representation."""
