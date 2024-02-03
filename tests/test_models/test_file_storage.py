@@ -9,6 +9,8 @@ class TestFileStorage(unittest.TestCase):
         """Set up test environment."""
         self.file_path = "test_file.json"
         self.storage = FileStorage()
+        # Ensure that storage is properly initialized
+        self.storage.reload()
         self.obj1 = BaseModel()
         self.obj2 = BaseModel()
         self.obj3 = BaseModel()
