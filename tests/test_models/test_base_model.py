@@ -31,5 +31,14 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(obj_dict['created_at'], obj.created_at.isoformat())
         self.assertEqual(obj_dict['updated_at'], obj.updated_at.isoformat())
 
+    def test_reload_from_dict(self):
+        """Test reload_from_dict method"""
+        obj = BaseModel()
+        obj_dict = obj.to_dict()
+        new_obj = BaseModel()
+        new_obj.reload_from_dict(obj_dict)
+        self.assertEqual(obj.__dict__, new_obj.__dict__)
+
 if __name__ == '__main__':
     unittest.main()
+

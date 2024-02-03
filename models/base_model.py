@@ -45,3 +45,13 @@ class BaseModel:
         d['created_at'] = self.created_at.isoformat()
         d['updated_at'] = self.updated_at.isoformat()
         return d
+
+    def reload_from_dict(self, dictionary):
+        """Reload attributes from dictionary representation."""
+        for key, value in dictionary.items():
+            if key != '__class__':
+                if key in ('created_at', 'updated_at'):
+                    setattr(self, key, datetime.strptime(
+                        value, '%Y-%m-%dT%H:%M:%S.%f'))
+                else:
+                    setattr(self, key, value)
