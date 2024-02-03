@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-Unittests for BaseModel class
+Unit tests for BaseModel class
 """
 import os
 import unittest
 # tests/test_models/test_base.py
 
-from models.model_base import BaseModel
+from models.base_model import BaseModel
 from datetime import datetime
 
 # # Get the current script's directory
