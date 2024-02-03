@@ -2,8 +2,16 @@
 """
 Unittests for BaseModel class
 """
+import sys
+import os
 import unittest
 from models.base_model import BaseModel
+
+# # Get the current script's directory
+# script_dir = os.path.dirname(os.path.realpath(__file__))
+
+# # Add the parent directory to the Python path
+# sys.path.append(os.path.abspath(os.path.join(script_dir, '..')))
 
 
 class TestBaseModel(unittest.TestCase):
