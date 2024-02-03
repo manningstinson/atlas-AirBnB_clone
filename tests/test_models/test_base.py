@@ -4,7 +4,9 @@ Unittests for BaseModel class
 """
 import os
 import unittest
-from models.base_model import BaseModel, Base
+# tests/test_models/test_base.py
+
+from models.model_base import BaseModel
 from datetime import datetime
 
 # # Get the current script's directory
