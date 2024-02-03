@@ -12,23 +12,32 @@ class TestBaseModel(unittest.TestCase):
     """
     def setUp(self):
         """
-        Set up method to create an instance of BaseModel
+        Set up method to create an
+        instance of BaseModel
         """
         self.my_model = BaseModel()
 
     def test_attributes(self):
         """
-        Test the attributes of BaseModel instance
+        Test the attributes
+        of BaseModel instance
         """
-        self.assertTrue(hasattr(self.my_model, 'id'))
-        self.assertTrue(hasattr(self.my_model, 'created_at'))
-        self.assertTrue(hasattr(self.my_model, 'updated_at'))
+        self.assertTrue(
+            hasattr(self.my_model, 'id'))
+        self.assertTrue(
+            hasattr(self.my_model, 'created_at'))
+        self.assertTrue(
+            hasattr(self.my_model, 'updated_at'))
 
     def test_str_method(self):
         """
-        Test the __str__ method of BaseModel
+        Test the __str__ method
+        of BaseModel
         """
-        expected_str = "[BaseModel] ({}) {}".format(self.my_model.id, self.my_model.__dict__)
+        expected_str = (
+            f"[BaseModel] ({self.my_model.id}) "
+            f"{self.my_model.__dict__}"
+                        )
         self.assertEqual(str(self.my_model), expected_str)
 
     def test_save_method(self):
@@ -49,5 +58,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue('updated_at' in my_model_dict)
         self.assertEqual(my_model_dict['__class__'], 'BaseModel')
 
+
 if __name__ == '__main__':
+
     unittest.main()
