@@ -1,73 +1,64 @@
 #!/usr/bin/python3
 """
-Unit tests for BaseModel class
+Module containing the BaseModel class
 """
-import os
-import unittest
-# tests/test_models/test_base.py
-
-from models.base_model import BaseModel
+import uuid
 from datetime import datetime
 
-# # Get the current script's directory
-# script_dir = os.path.dirname(os.path.realpath(__file__))
 
-# # Add the parent directory to the Python path
-# sys.path.append(os.path.abspath(os.path.join(script_dir, '..')))
-
-class TestBaseModel(unittest.TestCase):
+class BaseModel:
     """
-    Test cases for BaseModel class
+    BaseModel class
     """
-    def setUp(self):
+    def __init__(self, *args, **kwargs):
         """
-        Set up method to create an
-        instance of BaseModel
-        """
-        self.my_model = BaseModel()
+        Initializes a new instance of BaseModel.
 
-    def test_attributes(self):
-        """
-        Test the attributes
-        of BaseModel instance
-        """
-        self.assertTrue(
-            hasattr(self.my_model, 'id'))
-        self.assertTrue(
-            hasattr(self.my_model, 'created_at'))
-        self.assertTrue(
-            hasattr(self.my_model, 'updated_at'))
+        If kwargs is not empty, it recreates the instance
+        from the dictionary representation.
 
-    def test_str_method(self):
+        Args:
+            *args: Unused
+            **kwargs: Dictionary representation of the instance
         """
-        Test the __str__ method
-        of BaseModel
-        """
-        expected_str = (
-            f"[BaseModel] ({self.my_model.id}) "
-            f"{self.my_model.__dict__}"
-                        )
-        self.assertEqual(str(self.my_model), expected_str)
+        if kwargs:
+            # Remove __class__ from kwargs
+            kwargs.pop('__class__', None)
 
-    def test_save_method(self):
-        """
-        Test the save method of BaseModel
-        """
-        old_updated_at = self.my_model.updated_at
-        self.my_model.save()
-        self.assertNotEqual(old_updated_at, self.my_model.updated_at)
+            # Convert created_at and updated_at strings to datetime objects
+            kwargs['created_at'] = datetime.strptime(kwargs['created_at'], '%Y-%m-%dT%H:%M:%S.%f')
+            kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'], '%Y-%m-%dT%H:%M:%S.%f')
 
-    def test_to_dict_method(self):
+            # Set attributes from kwargs
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        else:
+            # If kwargs is empty, create new instance with id, created_at, and updated_at
+            self.id = str(uuid.uuid4())
+            self.created_at = self.updated_at = datetime.now()
+
+    def __str__(self):
         """
-        Test the to_dict method of BaseModel
+        Returns a string representation of the instance.
         """
-        my_model_dict = self.my_model.to_dict()
-        self.assertTrue('__class__' in my_model_dict)
-        self.assertTrue('created_at' in my_model_dict)
-        self.assertTrue('updated_at' in my_model_dict)
-        self.assertEqual(my_model_dict['__class__'], 'BaseModel')
+        return "[{}] ({}) {}".format(
+            self.__class__.__name__, self.id, self.__dict__)
 
+    def save(self):
+        """
+        Updates the public instance attribute
+        updated_at with the current datetime.
+        """
+        self.updated_at = datetime.now()
 
-if __name__ == '__main__':
+    def to_dict(self):
+        """
+        Returns a dictionary containing all keys/values of __dict__ of the instance.
 
-    unittest.main()
+        Converts datetime objects to string format.
+        """
+        instance_dict = self.__dict__.copy()
+        instance_dict['__class__'] = self.__class__.__name__
+        instance_dict['created_at'] = self.created_at.isoformat()
+        instance_dict['updated_at'] = self.updated_at.isoformat()
+        return instance_dict
