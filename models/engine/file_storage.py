@@ -9,6 +9,15 @@ class FileStorage:
 
     __file_path = "file.json"
     __objects = {}
+    __storage_instance = None
+
+    @classmethod
+    def set_storage_instance(cls, instance):
+        cls.__storage_instance = instance
+
+    @classmethod
+    def get_storage_instance(cls):
+        return cls.__storage_instance
 
     def all(self):
         """Returns the dictionary __objects."""

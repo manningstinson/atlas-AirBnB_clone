@@ -1,8 +1,7 @@
-# models/__init__.py
+from models.engine.file_storage import FileStorage
 
-# Import necessary modules
-from .engine.file_storage import FileStorage
-
-# Initialize storage
 storage = FileStorage()
 storage.reload()
+
+def get_storage():
+    return storage
