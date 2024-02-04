@@ -2,13 +2,11 @@
 
 ![airbnb clone](https://github.com/manningstinson/atlas-AirBnB_clone/assets/104523090/2293c7ad-a821-417a-8acb-dc2c6961d06b)
 
-# Atlas School - airbnb clone
-
 In this six part project, two team members are creating a clone of the airbnb travel website. The first project will be a console, or shell to access the project from the terminal/command line.
 
 ## Authors
 
-This project is a a collaborative effort between the below authors. You can learn more about the authors by visiting their github profiles through the links below.<br>
+This project is a a collaborative effort between the below authors. You can learn more about the authors by visiting their github profiles through the links below.
 
 [Manning Stinson](https://github.com/manningstinson) |
 [Brandon Montezuma](https://github.com/bmontezuma)
@@ -33,7 +31,7 @@ or if you want to retrieve objects you could use the following:
 retrieve User from database
 ```
 
-## Full Project Documenation
+## Full Project Documentation
 
-This project will be fully documented at the airbnb clone wiki. You can access it here:<br>
+This project will be fully documented at the airbnb clone wiki. You can access it here:
 [airbnb-clone-wiki](https://github.com/manningstinson/atlas-AirBnB_clone/wiki/Home-%7C-airbnb-clone)
