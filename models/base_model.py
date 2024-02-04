@@ -1,65 +1,68 @@
 #!/usr/bin/python3
 """
-BaseModel class for common attributes/methods.
+Module containing the BaseModel class
 """
-
 import uuid
 from datetime import datetime
-from models.engine.file_storage import FileStorage
-from models import BaseModel
 
 
 class BaseModel:
     """
-    BaseModel class for common attributes/methods.
-
-    Attributes:
-        id (str): Unique identifier for the instance.
-        created_at (datetime): Datetime representing the creation time.
-        updated_at (datetime): Datetime representing the last update time.
+    BaseModel class
     """
-
     def __init__(self, *args, **kwargs):
-        """Initialize instance."""
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        """
+        Initializes a new instance of BaseModel.
 
+        If kwargs is not empty, it recreates the instance
+        from the dictionary representation.
+
+        Args:
+            *args: Unused
+            **kwargs: Dictionary representation of the instance
+        """
         if kwargs:
-            for k, v in kwargs.items():
-                if k != '__class__':
-                    if k in ('created_at', 'updated_at'):
-                        setattr(self, k, datetime.strptime(
-                            v, '%Y-%m-%dT%H:%M:%S.%f'))
-                    else:
-                        setattr(self, k, v)
-        if not kwargs:
-            storage.new(self)
+            # Remove __class__ from kwargs
+            kwargs.pop('__class__', None)
+
+            # Convert created_at and updated_at strings to datetime objects
+            kwargs['created_at'] = datetime.strptime(
+                    kwargs['created_at'], '%Y-%m-%dT%H:%M:%S.%f')
+            kwargs['updated_at'] = datetime.strptime(
+                    kwargs['updated_at'], '%Y-%m-%dT%H:%M:%S.%f')
+
+            # Set attributes from kwargs
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        else:
+            # If kwargs is empty, create a new instance
+            # with id, created_at, and updated_at
+            self.id = str(uuid.uuid4())
+            self.created_at = self.updated_at = datetime.now()
 
     def __str__(self):
-        """Return string representation."""
+        """
+        Returns a string representation of the instance.
+        """
         return "[{}] ({}) {}".format(
-            type(self).__name__, self.id, self.__dict__)
+            self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
-        """Update updated_at attribute."""
+        """
+        Updates the public instance attribute
+        updated_at with the current datetime.
+        """
         self.updated_at = datetime.now()
-        storage.save()
 
     def to_dict(self):
-        """Return dictionary representation."""
-        d = self.__dict__.copy()
-        d['__class__'] = type(self).__name__
-        d['created_at'] = self.created_at.isoformat()
-        d['updated_at'] = self.updated_at.isoformat()
-        return d
+        """
+        Returns a dictionary containing all keys/values
+        of __dict__ of the instance.
 
-    def reload_from_dict(self, dictionary):
-        """Reload attributes from dictionary representation."""
-        for key, value in dictionary.items():
-            if key != '__class__':
-                if key in ('created_at', 'updated_at'):
-                    setattr(self, key, datetime.strptime(
-                        value, '%Y-%m-%dT%H:%M:%S.%f'))
-                else:
-                    setattr(self, key, value)
+        Converts datetime objects to string format.
+        """
+        instance_dict = self.__dict__.copy()
+        instance_dict['__class__'] = self.__class__.__name__
+        instance_dict['created_at'] = self.created_at.isoformat()
+        instance_dict['updated_at'] = self.updated_at.isoformat()
+        return instance_dict
