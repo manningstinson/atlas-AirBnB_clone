@@ -21,7 +21,7 @@ A command interpreter is a tool that allows you to interact with your project by
 
 If you want to create a new user, you could use the following:
 
-```pythoh
+```python
 create User
 ```
 
