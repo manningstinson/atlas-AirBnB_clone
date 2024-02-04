@@ -5,8 +5,9 @@ BaseModel class for common attributes/methods.
 
 import uuid
 from datetime import datetime
-from models import storage  # Import the storage variable
-from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
+from models.base_model import BaseModel  # Import BaseModel directly from base_model module
+
 
 class BaseModel:
     """
