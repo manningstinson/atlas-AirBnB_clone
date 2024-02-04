@@ -5,10 +5,8 @@ BaseModel class for common attributes/methods.
 
 import uuid
 from datetime import datetime
-
-
-storage = None
-
+from models import storage  # Import the storage variable
+from models.base_model import BaseModel
 
 class BaseModel:
     """
