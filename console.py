@@ -5,6 +5,7 @@ Console module for AirBnB project
 
 import cmd
 from models.base_model import BaseModel
+from models.user import User  # Import User class
 from models import storage
 
 class HBNBCommand(cmd.Cmd):
@@ -27,7 +28,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """Create a new instance of BaseModel"""
+        """Create a new instance of BaseModel or User"""
         if not arg:
             print("** class name missing **")
             return
