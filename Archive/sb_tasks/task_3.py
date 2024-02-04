@@ -1,17 +1,12 @@
 #!/usr/bin/python3
-"""
-BaseModel class for common attributes/methods.
-"""
-
 import uuid
 from datetime import datetime
-from models.engine.file_storage import FileStorage
-from models import BaseModel
 
 
 class BaseModel:
     """
     BaseModel class for common attributes/methods.
+
 
     Attributes:
         id (str): Unique identifier for the instance.
@@ -33,8 +28,6 @@ class BaseModel:
                             v, '%Y-%m-%dT%H:%M:%S.%f'))
                     else:
                         setattr(self, k, v)
-        if not kwargs:
-            storage.new(self)
 
     def __str__(self):
         """Return string representation."""
@@ -44,7 +37,6 @@ class BaseModel:
     def save(self):
         """Update updated_at attribute."""
         self.updated_at = datetime.now()
-        storage.save()
 
     def to_dict(self):
         """Return dictionary representation."""
@@ -53,13 +45,3 @@ class BaseModel:
         d['created_at'] = self.created_at.isoformat()
         d['updated_at'] = self.updated_at.isoformat()
         return d
-
-    def reload_from_dict(self, dictionary):
-        """Reload attributes from dictionary representation."""
-        for key, value in dictionary.items():
-            if key != '__class__':
-                if key in ('created_at', 'updated_at'):
-                    setattr(self, key, datetime.strptime(
-                        value, '%Y-%m-%dT%H:%M:%S.%f'))
-                else:
-                    setattr(self, key, value)
