@@ -15,7 +15,6 @@ from datetime import datetime
 # # Add the parent directory to the Python path
 # sys.path.append(os.path.abspath(os.path.join(script_dir, '..')))
 
-
 class TestBaseModel(unittest.TestCase):
     """
     Test cases for BaseModel class
