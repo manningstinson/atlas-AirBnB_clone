@@ -1,3 +1,3 @@
 # Sandbox - Manning
 
-Working files for airbnb project.
+User sandbox: Manning Stinson
