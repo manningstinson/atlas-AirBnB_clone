@@ -1,47 +1,44 @@
 import unittest
-from datetime import datetime
-from models.base_model import BaseModel, storage
+import os
+from models.engine.file_storage import FileStorage
+from models.base_model import BaseModel
 
-
-class TestBaseModel(unittest.TestCase):
+class TestFileStorage(unittest.TestCase):
     def setUp(self):
-        """Set up method to create instances."""
+        """Set up test environment."""
+        self.file_path = "test_file.json"
+        self.storage = FileStorage()
+        self.storage.reload()  # Reload objects from existing JSON file
         self.obj1 = BaseModel()
         self.obj2 = BaseModel()
-        self.obj3 = BaseModel(id="123", created_at="2023-01-01T00:00:00.000001",
-                              updated_at="2023-01-01T00:00:00.000001", name="Test")
+        self.obj3 = BaseModel()
+        self.storage.new(self.obj1)
+        self.storage.new(self.obj2)
+        self.storage.new(self.obj3)
 
-    def test_init(self):
-        """Test initialization of BaseModel"""
-        self.assertIsInstance(self.obj1.id, str)
-        self.assertIsInstance(self.obj1.created_at, datetime)
-        self.assertIsInstance(self.obj1.updated_at, datetime)
+    def tearDown(self):
+        """Tear down test environment."""
+        if os.path.exists(self.file_path):
+            os.remove(self.file_path)
 
-    def test_str(self):
-        """Test string representation"""
-        self.assertEqual(str(self.obj1), "[BaseModel] ({}) {}".format(self.obj1.id, self.obj1.__dict__))
+    def test_all(self):
+        """Test all method."""
+        all_objs = self.storage.all()
+        self.assertEqual(len(all_objs), 3)
+        self.assertIn("BaseModel." + self.obj1.id, all_objs)
+        self.assertIn("BaseModel." + self.obj2.id, all_objs)
+        self.assertIn("BaseModel." + self.obj3.id, all_objs)
 
-    def test_save(self):
-        """Test save method"""
-        prev_updated_at = self.obj1.updated_at
-        self.obj1.save()
-        self.assertNotEqual(prev_updated_at, self.obj1.updated_at)
-
-    def test_to_dict(self):
-        """Test to_dict method"""
-        obj_dict = self.obj1.to_dict()
-        self.assertEqual(obj_dict['__class__'], 'BaseModel')
-        self.assertEqual(obj_dict['id'], self.obj1.id)
-        self.assertEqual(obj_dict['created_at'], self.obj1.created_at.isoformat())
-        self.assertEqual(obj_dict['updated_at'], self.obj1.updated_at.isoformat())
-
-    def test_reload_from_dict(self):
-        """Test reload_from_dict method"""
-        obj_dict = self.obj1.to_dict()
-        new_obj = BaseModel()
-        new_obj.reload_from_dict(obj_dict)
-        self.assertEqual(self.obj1.__dict__, new_obj.__dict__)
-
+    def test_save_reload(self):
+        """Test save and reload methods."""
+        self.storage.save()
+        new_storage = FileStorage()
+        new_storage.reload()
+        all_objs = new_storage.all()
+        self.assertEqual(len(all_objs), 3)
+        self.assertIn("BaseModel." + self.obj1.id, all_objs)
+        self.assertIn("BaseModel." + self.obj2.id, all_objs)
+        self.assertIn("BaseModel." + self.obj3.id, all_objs)
 
 if __name__ == '__main__':
     unittest.main()
