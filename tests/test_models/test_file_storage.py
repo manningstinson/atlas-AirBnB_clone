@@ -11,6 +11,18 @@ class TestFileStorage(unittest.TestCase):
         if os.path.exists(FileStorage._FileStorage__file_path):
             os.remove(FileStorage._FileStorage__file_path)
 
+    def test_file_path(self):
+        # Test if __file_path attribute exists
+        self.assertTrue(hasattr(self.storage, "_FileStorage__file_path"))
+        # Test if __file_path has the correct value
+        self.assertEqual(self.storage._FileStorage__file_path, "file.json")
+
+    def test_objects(self):
+        # Test if __objects attribute exists
+        self.assertTrue(hasattr(self.storage, "_FileStorage__objects"))
+        # Test if __objects is a dictionary
+        self.assertIsInstance(self.storage._FileStorage__objects, dict)
+
     def test_save_reload(self):
         # Create a BaseModel instance
         model = BaseModel()
@@ -30,3 +42,4 @@ class TestFileStorage(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
