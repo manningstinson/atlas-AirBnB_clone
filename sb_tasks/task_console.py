@@ -13,7 +13,6 @@ class HBNBCommand(cmd.Cmd):
     """
     HBNBCommand class inherits from cmd.Cmd
     """
-
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
@@ -30,11 +29,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """
-        Create a new instance of BaseModel or User.
-
-        Usage: create <class name>
-        """
+        """Create a new instance of BaseModel or User"""
         if not arg:
             print("** class name missing **")
             return
@@ -46,11 +41,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_show(self, arg):
-        """
-        Show string representation of an instance.
-
-        Usage: show <class name> <id>
-        """
+        """Show string representation of an instance"""
         if not arg:
             print("** class name missing **")
             return
@@ -74,11 +65,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_destroy(self, arg):
-        """
-        Destroy an instance based on class name and id.
-
-        Usage: destroy <class name> <id>
-        """
+        """Destroy an instance based on class name and id"""
         if not arg:
             print("** class name missing **")
             return
@@ -103,11 +90,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, arg):
-        """
-        Print string representation of all instances.
-
-        Usage: all <class name>
-        """
+        """Print string representation of all instances"""
         if not arg:
             print("** class name missing **")
             return
@@ -123,11 +106,7 @@ class HBNBCommand(cmd.Cmd):
         print(result)
 
     def do_update(self, arg):
-        """
-        Update an instance based on class name and id.
-
-        Usage: update <class name> <id> <attribute name> "<attribute value>"
-        """
+        """Update an instance based on class name and id"""
         if not arg:
             print("** class name missing **")
             return
