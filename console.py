@@ -8,6 +8,7 @@ from models.base_model import BaseModel
 from models.user import User  # Import User class
 from models import storage
 
+
 class HBNBCommand(cmd.Cmd):
     """
     HBNBCommand class inherits from cmd.Cmd
@@ -100,7 +101,8 @@ class HBNBCommand(cmd.Cmd):
             return
 
         all_instances = storage.all()
-        result = [str(value) for key, value in all_instances.items() if key.startswith(arg + ".")]
+        result = [str(value) for key, value in all_instances.items()
+                  if key.startswith(arg + ".")]
         print(result)
 
     def do_update(self, arg):
@@ -139,6 +141,7 @@ class HBNBCommand(cmd.Cmd):
         instance = all_instances[key]
         setattr(instance, attribute_name, attribute_value)
         instance.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
