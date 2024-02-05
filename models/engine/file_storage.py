@@ -1,34 +1,51 @@
-# models/engine/file_storage.py
-
+#!/usr/bin/python3
+"""
+Module containing the FileStorage class
+"""
 import json
 from models.base_model import BaseModel
 
 
 class FileStorage:
+    """
+    FileStorage class
+    """
     __file_path = "file.json"
     __objects = {}
 
     def all(self):
+        """
+        Returns the dictionary __objects
+        """
         return FileStorage.__objects
 
     def new(self, obj):
-        key = "{}.{}".format(type(obj).__name__, obj.id)
+        """
+        Sets in __objects the obj with key <obj class name>.id
+        """
+        key = "{}.{}".format(obj.__class__.__name__, obj.id)
         FileStorage.__objects[key] = obj
 
     def save(self):
-        obj_dict = {key: obj.to_dict() for key,
-                    obj in FileStorage.__objects.items()}
+        """
+        Serializes __objects to the JSON file (path: __file_path)
+        """
         with open(FileStorage.__file_path, 'w') as file:
+            obj_dict = {key: obj.to_dict() for key,
+                        obj in FileStorage.__objects.items()}
             json.dump(obj_dict, file)
 
     def reload(self):
+        """
+        Deserializes the JSON file to __objects (if the JSON file exists)
+        """
         try:
             with open(FileStorage.__file_path, 'r') as file:
                 obj_dict = json.load(file)
                 for key, value in obj_dict.items():
                     cls_name, obj_id = key.split('.')
                     cls = eval(cls_name)
-                    instance = cls(**value)
-                    FileStorage.__objects[key] = instance
+                    new_obj = cls(**value)
+                    FileStorage.__objects[key] = new_obj
         except FileNotFoundError:
             pass

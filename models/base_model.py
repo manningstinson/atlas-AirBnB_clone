@@ -39,6 +39,9 @@ class BaseModel:
             # id, created_at, and updated_at
             self.id = str(uuid.uuid4())
             self.created_at = self.updated_at = datetime.now()
+            from models import storage
+            storage.new(self)
+            storage.save()
 
     def __str__(self):
         """
@@ -53,6 +56,9 @@ class BaseModel:
         updated_at with the current datetime.
         """
         self.updated_at = datetime.now()
+        from models import storage
+        storage.new(self)
+        storage.save()
 
     def to_dict(self):
         """
