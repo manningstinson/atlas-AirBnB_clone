@@ -163,6 +163,14 @@ class HBNBCommand(cmd.Cmd):
         setattr(instance, attribute_name, attribute_value)
         instance.save()
 
+    def precmd(self, line):
+        """
+        Override the precommand method to handle empty lines with spaces
+        """
+        if not line.strip():
+            return ""
+        return line
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
