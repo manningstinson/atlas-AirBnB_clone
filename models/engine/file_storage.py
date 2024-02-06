@@ -4,6 +4,7 @@ Module containing the FileStorage class
 """
 import json
 from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:
@@ -44,7 +45,8 @@ class FileStorage:
                 obj_dict = json.load(file)
                 for key, value in obj_dict.items():
                     cls_name, obj_id = key.split('.')
-                    cls = eval(cls_name)
+                    # Check if the class is User
+                    cls = User if cls_name == "User" else eval(cls_name)
                     new_obj = cls(**value)
                     FileStorage.__objects[key] = new_obj
         except FileNotFoundError:

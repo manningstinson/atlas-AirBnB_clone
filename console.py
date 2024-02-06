@@ -31,7 +31,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, arg):
         """
-        Create a new instance of BaseModel or User.
+        Create a new instance of BaseModel, User, or any other class.
 
         Usage: create <class name>
         """
@@ -43,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
             new_instance.save()
             print(new_instance.id)
         except Exception as e:
-            print("** class doesn't exist **")
+            print("** {}".format(e))
 
     def do_show(self, arg):
         """
