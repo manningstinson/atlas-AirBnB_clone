@@ -8,7 +8,7 @@ from datetime import datetime
 
 class BaseModel:
     """
-    BaseModel class
+    BaseModel class that defines all common attributes/methods for other classes
     """
     def __init__(self, *args, **kwargs):
         """
@@ -35,13 +35,10 @@ class BaseModel:
             for key, value in kwargs.items():
                 setattr(self, key, value)
         else:
-            # If kwargs is empty, create new instance with
-            # id, created_at, and updated_at
+            # If kwargs is empty, create a new instance
+            # with id, created_at, and updated_at
             self.id = str(uuid.uuid4())
             self.created_at = self.updated_at = datetime.now()
-            from models import storage
-            storage.new(self)
-            storage.save()
 
     def __str__(self):
         """
@@ -56,14 +53,11 @@ class BaseModel:
         updated_at with the current datetime.
         """
         self.updated_at = datetime.now()
-        from models import storage
-        storage.new(self)
-        storage.save()
 
     def to_dict(self):
         """
-        Returns a dictionary containing all
-        keys/values of __dict__ of the instance.
+        Returns a dictionary containing all keys/values
+        of __dict__ of the instance.
 
         Converts datetime objects to string format.
         """
