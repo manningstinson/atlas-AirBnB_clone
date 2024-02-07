@@ -35,7 +35,7 @@ def retrieve_objects(self, obj_type):
 ```
 > ```def retrieve_objects(self, obj_type):```: This line defines a method called retrieve_objects within a class.
 > The method takes two parameters: ```self```, which represents the instance of the class, and ```obj_type```, which is the type of object the method is meant to retrieve.
-> if ```obj_type```` in  self.objects:```: This line checks if the specified obj_type exists in the self.objects dictionary. self.objects is assumed to be a dictionary where keys represent object types, and values are lists of objects of that type.
+> if ```obj_type in  self.objects:```: This line checks if the specified obj_type exists in the self.objects dictionary. self.objects is assumed to be a dictionary where keys represent object types, and values are lists of objects of that type.
 > 
 ```print(f"Retrieving {obj_type}:")```: If the ```obj_type``` exists in the dictionary, this line prints a message indicating that objects of that type are being retrieved.
 > for ```obj``` in ```self.objects[obj_type]:```: This line iterates over the list of objects associated with the obj_type in the self.objects dictionary.
