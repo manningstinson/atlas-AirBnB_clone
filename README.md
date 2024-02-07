@@ -43,7 +43,7 @@ def retrieve_objects(self, obj_type):
 
 > for ```obj in self.objects[obj_type]:```: This line iterates over the list of objects associated with the obj_type in the self.objects dictionary.
 
-```print(obj.name)```: Within the loop, this line prints the name attribute of each object. It assumes that the objects have a name attribute that holds information identifying the object. 
+> ```print(obj.name)```: Within the loop, this line prints the name attribute of each object. It assumes that the objects have a name attribute that holds information identifying the object. 
 For instance, if ```obj_type is 'users'```, this line would print the name of each user object retrieved.
 
 > Overall, this method retrieves objects of a specified type (obj_type) from the ```self.objects``` dictionary and prints out their names or relevant information. If the specified type does not exist in the dictionary, it prints a message indicating that no such objects were found.
