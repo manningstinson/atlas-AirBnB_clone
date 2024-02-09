@@ -26,8 +26,7 @@ class FileStorage:
         Serializes __objects to the JSON file (path: __file_path)
         """
         with open(FileStorage.__file_path, 'w') as file:
-            obj_dict = {key: obj.to_dict() for key,
-                        obj in FileStorage.__objects.items()}
+            obj_dict = {key: obj.to_dict() for key, obj in FileStorage.__objects.items()}
             json.dump(obj_dict, file)
 
     def reload(self):
@@ -44,14 +43,3 @@ class FileStorage:
                     FileStorage.__objects[key] = new_obj
         except FileNotFoundError:
             pass  # Handle the case where the file does not exist gracefully
-
-class User(BaseModel):
-    """User class inheriting from BaseModel."""
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
-
-    def __init__(self, *args, **kwargs):
-        """Initialize User instance."""
-        super().__init__(*args, **kwargs)
