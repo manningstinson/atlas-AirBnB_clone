@@ -24,5 +24,25 @@ class HBNBCommand(cmd.Cmd):
         """Do nothing on empty input."""
         pass
 
+    def do_create(self, arg):
+        """Creates a new instance of BaseModel."""
+        pass
+
+    def do_show(self, arg):
+        """Prints the string representation of an instance."""
+        pass
+
+    def do_destroy(self, arg):
+        """Deletes an instance based on the class name and id."""
+        pass
+
+    def do_all(self, arg):
+        """Prints all string representation of all instances."""
+        pass
+
+    def do_update(self, arg):
+        """Updates an instance based on the class name and id."""
+        pass
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
