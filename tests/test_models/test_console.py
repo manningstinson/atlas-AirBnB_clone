@@ -40,6 +40,8 @@ class TestConsole(unittest.TestCase):
             self.console.onecmd("create BaseModel")
             self.console.onecmd("all")
             output = self.held_output.getvalue().strip()
+            # Assuming your do_all method returns a string representation of all instances
+            # Ensure that BaseModel is present in the output
             self.assertIn("BaseModel", output)
 
     def test_do_update(self):
