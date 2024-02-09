@@ -8,7 +8,7 @@ from datetime import datetime
 
 class BaseModel:
     """
-    BaseModel class that defines all 
+    BaseModel class that defines all
     common attributes/methods for other classes
     """
     def __init__(self, *args, **kwargs):
@@ -19,8 +19,8 @@ class BaseModel:
         from the dictionary representation.
 
         Args:
-            *args: Unused
-            **kwargs: Dictionary representation of the instance
+          *args: Unused
+          **kwargs: Dictionary representation of the instance
         """
         if kwargs:
             # Remove __class__ from kwargs
