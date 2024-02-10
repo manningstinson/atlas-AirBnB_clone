@@ -3,6 +3,15 @@
 """
 Console module implementing a command interpreter for the AirBnB clone project.
 """
+
+import os
+
+file_path = "file.json"
+
+if not os.path.exists(file_path):
+    with open(file_path, "w") as file:
+        file.write("{}")
+
 import cmd
 import re
 from shlex import split
