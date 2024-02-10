@@ -16,7 +16,6 @@ from models.amenity import Amenity
 from models.review import Review
 
 
-
 class HBNBCommand(cmd.Cmd):
     """
     HBNBCommand class implementing a command interpreter.
@@ -46,12 +45,13 @@ class HBNBCommand(cmd.Cmd):
         Create a new instance of a specified class
         Usage: create <class_name>
         """
+        class_names = {"State", "City", "Amenity", "Place", "Review", "User"}  # Add more if needed
         args = arg.split()
         if len(args) == 0:
             print("** class name missing **")
             return
         class_name = args[0]
-        if class_name not in ("BaseModel", "User"):  # Add more classes as needed
+        if class_name not in class_names:
             print("** class doesn't exist **")
             return
         new_instance = eval(class_name)()
