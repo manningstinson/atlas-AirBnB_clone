@@ -23,22 +23,41 @@ class TestFileStorage(unittest.TestCase):
         # Test if __objects is a dictionary
         self.assertIsInstance(self.storage._FileStorage__objects, dict)
 
-    def test_save_reload(self):
-        # Create a BaseModel instance
-        model = BaseModel()
-        model.name = "Test Model"
-        model.save()
+    class FileStorage:
+    __file_path = "file.json"
+    __objects = {}
 
-        # Reload storage
-        new_storage = FileStorage()
-        new_storage.reload()
+    def all(self):
+        """Returns the dictionary __objects"""
+        return self.__objects
 
-        # Check if the saved object exists in the reloaded storage
-        self.assertIn(f"BaseModel.{model.id}", new_storage.all())
+    def new(self, obj):
+        """Sets in __objects the obj with key <obj class name>.id"""
+        key = "{}.{}".format(type(obj).__name__, obj.id)
+        self.__objects[key] = obj
 
-        # Check if the attributes are correctly saved and loaded
-        loaded_model = new_storage.all()[f"BaseModel.{model.id}"]
-        self.assertEqual(loaded_model.name, "Test Model")
+    def save(self):
+        """Serializes __objects to the JSON file"""
+        serialized_objs = {}
+        for key, value in self.__objects.items():
+            serialized_objs[f"{type(value).__name__}.{value.id}"] = value.to_dict()
+        with open(self.__file_path, "w") as f:
+            json.dump(serialized_objs, f)
+
+    def reload(self):
+        """Deserializes the JSON file to __objects"""
+        try:
+            with open(self.__file_path, "r") as f:
+                loaded_objs = json.load(f)
+                print("Loaded objects:", loaded_objs)  # Debugging
+                for key, value in loaded_objs.items():
+                    class_name, obj_id = key.split('.')
+                    cls = BaseModel
+                    if class_name != 'BaseModel':
+                        cls = eval(class_name)
+                    self.__objects[key] = cls(**value)
+        except FileNotFoundError:
+            pass
 
 if __name__ == '__main__':
     unittest.main()

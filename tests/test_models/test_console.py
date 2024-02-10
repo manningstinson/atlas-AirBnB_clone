@@ -54,6 +54,27 @@ class TestConsole(unittest.TestCase):
             output = self.held_output.getvalue().strip()
             self.assertIn("'new_name'", output)
 
+   def test_save_reload(self):
+    # Create a BaseModel instance
+    model = BaseModel()
+    model.name = "Test Model"
+    model.save()
+
+    # Reload storage
+    new_storage = FileStorage()
+    new_storage.reload()
+
+    # Check the objects in storage before reloading
+    print("Objects in storage before reload:", new_storage.all())
+
+    # Check if the saved object exists in the reloaded storage
+    self.assertIn(f"BaseModel.{model.id}", new_storage.all())
+
+    # Check if the attributes are correctly saved and loaded
+    loaded_model = new_storage.all()[f"BaseModel.{model.id}"]
+    self.assertEqual(loaded_model.name, "Test Model")
+
+
     def test_do_quit(self):
         with patch('sys.stdout', self.held_output):
             self.assertTrue(self.console.onecmd("quit"))
