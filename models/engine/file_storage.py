@@ -1,5 +1,5 @@
 import json
-from models.base_model import BaseModel
+from models.base_model import BaseModel, User, State, City, Place, Amenity, Review
 
 class FileStorage:
     """
@@ -18,17 +18,17 @@ class FileStorage:
         """
         Sets in __objects the obj with key <obj class name>.id
         """
-        key = "{}.{}".format(obj.__class__.__name__, obj.id)
-        FileStorage.__objects[key] = obj
+        ocname = obj.__class__.__name__
+        FileStorage.__objects["{}.{}".format(ocname, obj.id)] = obj
 
     def save(self):
         """
         Serializes __objects to the JSON file (path: __file_path)
         """
+        odict = FileStorage.__objects
+        objdict = {key: obj.to_dict() for key, obj in odict.items()}
         with open(FileStorage.__file_path, 'w') as file:
-            obj_dict = {key: obj.to_dict() for key,
-                        obj in FileStorage.__objects.items()}
-            json.dump(obj_dict, file)
+            json.dump(objdict, file)
 
     def reload(self):
         """
@@ -36,22 +36,11 @@ class FileStorage:
         """
         try:
             with open(FileStorage.__file_path, 'r') as file:
-                obj_dict = json.load(file)
-                for key, value in obj_dict.items():
+                objdict = json.load(file)
+                for key, value in objdict.items():
                     cls_name, obj_id = key.split('.')
                     cls = eval(cls_name)
                     new_obj = cls(**value)
                     FileStorage.__objects[key] = new_obj
         except FileNotFoundError:
             pass  # Handle the case where the file does not exist gracefully
-
-class User(BaseModel):
-    """User class inheriting from BaseModel."""
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
-
-    def __init__(self, *args, **kwargs):
-        """Initialize User instance."""
-        super().__init__(*args, **kwargs)
