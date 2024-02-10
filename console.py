@@ -110,7 +110,9 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         """
         Update an instance based on the class name and id
-        Usage: update <class_name> <id> <attribute_name> "<attribute_value>"
+        Usage: update
+        <class_name> <id> 
+        <attribute_name> "<attribute_value>"
         """
         args = arg.split()
         if len(args) == 0:
@@ -137,6 +139,7 @@ class HBNBCommand(cmd.Cmd):
         obj = objects[key]
         setattr(obj, attr_name, attr_value)
         storage.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
