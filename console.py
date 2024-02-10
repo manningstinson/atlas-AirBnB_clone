@@ -1,74 +1,97 @@
 #!/usr/bin/python3
-"""
-Console module implementing a command interpreter for the AirBnB clone project.
-"""
-import cmd
+"""Module for console."""
+import sys
+import json
+from datetime import datetime
 from models.base_model import BaseModel
-from models.user import User
-from models import storage
 
-class HBNBCommand(cmd.Cmd):
-    """
-    HBNBCommand class implementing a command interpreter.
-    """
-    prompt = '(hbnb) '
+class_dict = {"BaseModel": BaseModel}
 
-    def do_quit(self, arg):
-        """
-        Quit command to exit the program
-        """
-        return True
+def create(class_name):
+    """Create an instance of BaseModel."""
+    if class_name == "":
+        print("** class name missing **")
+        return
+    elif class_name not in class_dict:
+        print("** class doesn't exist **")
+        return
+    instance = class_dict[class_name]()
+    instance.save()
+    print(instance.id)
 
-    def do_EOF(self, line):
-        """
-        Exit the program when EOF is reached
-        """
-        return True
+def show(class_name, obj_id):
+    """Show the string representation of an instance."""
+    if class_name == "":
+        print("** class name missing **")
+        return
+    elif class_name not in class_dict:
+        print("** class doesn't exist **")
+        return
+    if obj_id == "":
+        print("** instance id missing **")
+        return
+    key = class_name + "." + obj_id
+    if key not in BaseModel.__objects:
+        print("** no instance found **")
+        return
+    print(BaseModel.__objects[key])
 
-    def emptyline(self):
-        """
-        Do nothing on empty line
-        """
-        pass
+def destroy(class_name, obj_id):
+    """Destroy an instance based on the class name and id."""
+    if class_name == "":
+        print("** class name missing **")
+        return
+    elif class_name not in class_dict:
+        print("** class doesn't exist **")
+        return
+    if obj_id == "":
+        print("** instance id missing **")
+        return
+    key = class_name + "." + obj_id
+    if key not in BaseModel.__objects:
+        print("** no instance found **")
+        return
+    del BaseModel.__objects[key]
+    BaseModel.save_to_file()
 
-    def do_create(self, arg):
-        """
-        Create a new instance of a specified class
-        Usage: create <class_name>
-        """
-        args = arg.split()
-        if len(args) == 0:
-            print("** class name missing **")
-            return
-        class_name = args[0]
-        if class_name not in ("BaseModel", "User"):  # Add more classes as needed
-            print("** class doesn't exist **")
-            return
-        new_instance = eval(class_name)()
-        new_instance.save()
-        print(new_instance.id)
+def all_instances(class_name):
+    """Print all string representations of instances."""
+    if class_name == "":
+        print("** class name missing **")
+        return
+    elif class_name not in class_dict:
+        print("** class doesn't exist **")
+        return
+    instances = []
+    for key, value in BaseModel.__objects.items():
+        if key.split(".")[0] == class_name:
+            instances.append(str(value))
+    print(instances)
 
-    def do_show(self, arg):
-        """
-        Show the string representation of an instance
-        Usage: show <class_name> <id>
-        """
-        args = arg.split()
-        if len(args) == 0:
-            print("** class name missing **")
-            return
-        if len(args) == 1:
-            print("** instance id missing **")
-            return
-        class_name = args[0]
-        obj_id = args[1]
-        key = "{}.{}".format(class_name, obj_id)
-        objects = storage.all()
-        if key not in objects:
-            print("** no instance found **")
-        else:
-            print(objects[key])
+def update(class_name, obj_id, attr_name, attr_value):
+    """Update an instance based on the class name and id."""
+    if class_name == "":
+        print("** class name missing **")
+        return
+    elif class_name not in class_dict:
+        print("** class doesn't exist **")
+        return
+    if obj_id == "":
+        print("** instance id missing **")
+        return
+    key = class_name + "." + obj_id
+    if key not in BaseModel.__objects:
+        print("** no instance found **")
+        return
+    obj = BaseModel.__objects[key]
+    if hasattr(obj, attr_name):
+        attr_type = type(getattr(obj, attr_name))
+        setattr(obj, attr_name, attr_type(attr_value))
+        obj.save()
+    else:
+        print("** attribute name missing **")
 
+<<<<<<< HEAD
     def do_destroy(self, arg):
         """
         Delete an instance based on the class name and id
@@ -143,3 +166,19 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
+=======
+if __name__ == "__main__":
+    commands = {
+        "create": create,
+        "show": show,
+        "destroy": destroy,
+        "all": all_instances,
+        "update": update
+    }
+    if len(sys.argv) < 2:
+        sys.exit("Usage: ./console.py <command>")
+    command = sys.argv[1]
+    if command not in commands:
+        sys.exit(f"Unknown command: {command}")
+    commands[command](*sys.argv[2:])
+>>>>>>> refs/remotes/origin/main

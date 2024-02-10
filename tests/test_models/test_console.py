@@ -12,20 +12,28 @@ class TestConsole(unittest.TestCase):
     def tearDown(self):
         self.held_output.close()
 
-  def test_do_create(self):
+    def test_do_create(self):
     with patch('sys.stdout', self.held_output):
         self.console.onecmd("create BaseModel")
         output = self.held_output.getvalue().strip()
         print("Actual output:", output)  # Add this line to print the actual output
         self.assertTrue(output.isalnum())
         
+    def test_do_all(self):
+        with patch('sys.stdout', self.held_output):
+            self.console.onecmd("create BaseModel")
+            self.console.onecmd("all")
+            output = self.held_output.getvalue().strip()
+            print("Actual output:", output)  # Print the actual output for debugging
+            self.assertIn("BaseModel", output)
 
     def test_do_show(self):
         with patch('sys.stdout', self.held_output):
             self.console.onecmd("create BaseModel")
             created_output = self.held_output.getvalue().strip()
-            self.console.onecmd("show BaseModel {}".format(created_output))
+            self.console.onecmd("show BaseModel {}".format(created_output.split()[0]))
             output = self.held_output.getvalue().strip()
+            print("Actual output:", output)  # Print the actual output for debugging
             self.assertIn("BaseModel", output)
 
     def test_do_destroy(self):
@@ -36,13 +44,6 @@ class TestConsole(unittest.TestCase):
             self.console.onecmd("show BaseModel {}".format(created_output))
             output = self.held_output.getvalue().strip()
             self.assertIn("** no instance found **", output)
-
-    def test_do_all(self):
-        with patch('sys.stdout', self.held_output):
-            self.console.onecmd("create BaseModel")
-            self.console.onecmd("all")
-            output = self.held_output.getvalue().strip()
-            self.assertIn("BaseModel", output)
 
     def test_do_update(self):
         with patch('sys.stdout', self.held_output):
