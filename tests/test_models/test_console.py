@@ -11,12 +11,14 @@ class TestConsole(unittest.TestCase):
 
     def tearDown(self):
         self.held_output.close()
-
+        
     def test_do_create(self):
         with patch('sys.stdout', self.held_output):
-            self.console.onecmd("create BaseModel")
-            output = self.held_output.getvalue().strip()
-            self.assertTrue(output.isalnum())
+        self.console.onecmd("create BaseModel")
+        output = self.held_output.getvalue().strip()
+        print("Output:", output)  # Add this line for debugging
+        self.assertTrue(output.isalnum())
+
 
     def test_do_show(self):
         with patch('sys.stdout', self.held_output):
