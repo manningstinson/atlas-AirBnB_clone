@@ -100,7 +100,8 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
         else:
             del objects[key]
-            storage.save()
+        storage.save()
+
 
     def do_all(self, arg):
         """
@@ -148,13 +149,6 @@ class HBNBCommand(cmd.Cmd):
         obj = objects[key]
         setattr(obj, attr_name, attr_value)
         storage.save()
-
-
-# Check if the file.json exists and create it if it doesn't
-file_path = "file.json"
-if not os.path.exists(file_path):
-    with open(file_path, "w") as file:
-        file.write("{}")
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
