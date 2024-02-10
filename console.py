@@ -1,11 +1,21 @@
 #!/usr/bin/python3
+
 """
 Console module implementing a command interpreter for the AirBnB clone project.
 """
 import cmd
+import re
+from shlex import split
+from models import storage
 from models.base_model import BaseModel
 from models.user import User
-from models import storage
+from models.state import State
+from models.city import City
+from models.place import Place
+from models.amenity import Amenity
+from models.review import Review
+
+
 
 class HBNBCommand(cmd.Cmd):
     """
