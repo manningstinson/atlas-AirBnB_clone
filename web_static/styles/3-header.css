@@ -1,8 +1,10 @@
 header {
-	background-color: #fff;
-	border-bottom: 1px solid #cccccc;
+	background-color: white;
 	height: 70px;
 	width: 100%;
+	border-bottom: 1px solid #cccccc;
+	display: flex;
+	align-items: center;
 }
 
 .logo {
@@ -10,4 +12,5 @@ header {
 	width: 150px;
 	height: 50px;
 	display: inline-block; /* Or use float: left/right; */
+	margin-left: 20px;
 }
