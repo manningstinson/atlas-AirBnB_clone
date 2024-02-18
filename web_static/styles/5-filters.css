@@ -1,29 +1,30 @@
-.filters {
+.container .filters {
 	display: flex;
 }
 
-.filters > div {
+.container .filters > div {
 	width: 25%;
 	height: 100%;
-}
-
-.filters > div:not(:last-child) {
 	border-right: 1px solid #ddd;
 }
 
-.filters h3 {
+.container .filters > div:first-child {
+	border-right: none;
+}
+
+.container .filters h3 {
 	font-weight: 600;
 }
 
-.filters h4 {
+.container .filters h4 {
 	font-weight: 400;
 	font-size: 14px;
 }
 
-.container .filters {
-	background-color: white;
-	height: 70px;
-	width: 100%;
-	border: 1px solid #dddddd;
-	border-radius: 4px;
+.container .locations {
+	background-color: #f9f9f9;
+}
+
+.container .amenities {
+	background-color: #f0f0f0;
 }
