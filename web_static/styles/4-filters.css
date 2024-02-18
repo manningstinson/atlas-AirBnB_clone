@@ -1,0 +1,9 @@
+/* styles/4-filters.css */
+
+.container .filters {
+	background-color: white;
+	height: 70px;
+	width: 100%;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+}
