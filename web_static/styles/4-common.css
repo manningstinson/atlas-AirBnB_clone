@@ -4,6 +4,6 @@ body {
 }
 
 .container {
-	max-width: 1000px;
-	margin: 30px auto;
+	width: 80%;
+	margin: 0 auto;
 }
