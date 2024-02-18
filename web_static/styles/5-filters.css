@@ -30,12 +30,11 @@
 }
 
 /* Locations and amenities style */
-/* .locations,
-.amenities {
+.locations, .amenities {
 	display: inline-block;
 	height: 100%;
 	width: 25%;
-} */
+}
 
 /* Locations border */
 .locations {
