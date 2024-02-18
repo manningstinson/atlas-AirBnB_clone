@@ -1,12 +1,5 @@
 header {
-    background-color: #FF0000;
-    height: 70px;
-    width: 100%;
-}
-
-header h1 {
-    text-align: center;
-    line-height: 70px;
-    margin: 0;
-    color: white;
+	background-color: #ff0000;
+	height: 70px;
+	width: 100%;
 }
