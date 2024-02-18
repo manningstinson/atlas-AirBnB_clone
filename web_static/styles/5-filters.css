@@ -1,4 +1,4 @@
-/* styles/5-filters.css */
+/* styles/4-filters.css */
 
 .container .filters {
 	background-color: white;
@@ -8,31 +8,7 @@
 	border-radius: 4px;
 }
 
-.filters {
-	display: flex;
-	align-items: center;
-}
-
-.locations,
-.amenities {
-	height: 100%;
-	width: 25%;
-}
-
-.locations {
-	border-right: 1px solid #dddddd;
-}
-
-.locations h3,
-.amenities h3 {
-	font-weight: 600;
-}
-
-.locations h4,
-.amenities h4 {
-	font-weight: 400;
-	font-size: 14px;
-}
+/* styles/4-filters.css */
 
 .filters button {
 	font-size: 18px;
