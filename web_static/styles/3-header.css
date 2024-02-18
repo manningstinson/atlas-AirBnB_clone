@@ -1,19 +1,14 @@
 header {
 	background-color: #fff;
 	padding: 10px 0;
-    border-bottom: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
 }
 
 .logo {
-	/* Add background image here */
-	/* background-image: url('../images/logo.png'); */
-	/* Adjust background properties */
+	background-image: url("../images/logo.png"); /* Replace with your image path */
 	width: 150px;
 	height: 50px;
-}
-
-.logo {
-	text-align: center;
+	display: inline-block; /* Or use float: left/right; */
 }
 
 .logo img {
