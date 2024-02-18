@@ -3,7 +3,7 @@ footer {
 	height: 60px;
 	width: 100%;
 	display: flex;
-	justify-content: bottom;
+	justify-content: center;
 	align-items: center;
 }
 footer span {
