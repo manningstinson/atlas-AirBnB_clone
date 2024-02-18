@@ -1,21 +1,8 @@
-/* styles/5-filters.css */ /* styles/4-filters.css */
+/* styles/5-filters.css */
 
-.filters button {
-	font-size: 18px;
-	background-color: #ff5a5f;
-	color: #ffffff;
-	height: 48px;
-	width: 20%;
-	border: none;
-	border-radius: 4px;
-	margin-right: 30px;
-	transition: opacity 0.3s ease;
-	float: right;
-	margin-top: 11px;
-}
-
-.filters button:hover {
-	opacity: 0.9;
+.filters {
+	display: flex;
+	align-items: center;
 }
 
 .locations,
@@ -37,9 +24,4 @@
 .amenities h4 {
 	font-weight: 400;
 	font-size: 14px;
-}
-
-.filters {
-	display: flex;
-	align-items: center;
 }
