@@ -3,6 +3,18 @@ footer {
 	padding: 10px 0;
 }
 
+footer {
+	height: 60px;
+	width: 100%;
+	border-top: 1px solid #cccccc;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-items: flex-end;
+}
+
 .holberton {
 	text-align: center;
 }
