@@ -1,18 +1,12 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-color: #484848;
-    font-size: 14px;
-    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #484848;
+	font-size: 14px;
+	font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.logo {
-    background-image: url('../images/logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 30px;
-    width: auto;
-    margin-left: 20px;
-    display: inline-block;
-    vertical-align: middle;
+header,
+footer {
+	width: 100%;
 }
