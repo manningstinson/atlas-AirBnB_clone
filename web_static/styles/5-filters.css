@@ -30,11 +30,6 @@
 	opacity: 0.9;
 }
 
-.filters {
-	display: flex;
-	align-items: center;
-}
-
 .locations,
 .amenities {
 	height: 100%;
