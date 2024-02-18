@@ -50,14 +50,12 @@
 .filters h2,
 .filters h3,
 .filters h4 {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
 /* Header 3 style */
 .filters h3 {
-	font-size: 1.17em;
+	font-size: 0.5em;
 	font-weight: 600;
 	height: 50%;
 	padding: 15.5px 0 0 30px;
@@ -65,7 +63,7 @@
 
 /* Header 4 style */
 .filters h4 {
-	font-size: 14px;
+	font-size: 0.5em;
 	font-weight: 400;
 	height: 50%;
 	padding: 4.5px 0 12px 30px;
