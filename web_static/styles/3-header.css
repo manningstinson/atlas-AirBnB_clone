@@ -10,7 +10,3 @@ header {
 	height: 50px;
 	display: inline-block; /* Or use float: left/right; */
 }
-
-.logo img {
-	height: 50px;
-}
