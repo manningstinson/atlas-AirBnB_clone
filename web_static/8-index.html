@@ -7,9 +7,9 @@
 		<link rel="stylesheet" href="styles/4-common.css" />
 		<link rel="stylesheet" href="styles/3-header.css" />
 		<link rel="stylesheet" href="styles/3-footer.css" />
-		<link rel="stylesheet" href="styles/5-filters.css" />
 		<link rel="stylesheet" href="styles/6-filters.css" />
-		<link rel="stylesheet" href="styles/8-places.css" />
+		<link rel="stylesheet" href="styles/5-filters.css" />
+		<link rel="stylesheet" href="styles/7-places.css" />
 		<link rel="icon" type="image/png" href="images/icon.png" />
 	</head>
 	<body>
@@ -19,13 +19,51 @@
 
 		<div class="container">
 			<section class="filters">
-				<!-- Dropdown list for filters -->
+				<div class="locations">
+					<h3>States</h3>
+					<h4>Texas, Oklahoma, Kansas...</h4>
+					<ul class="popover">
+						<li>
+							<h2>Texas</h2>
+							<ul>
+								<li>Austin</li>
+								<li>Houston</li>
+								<li>Dallas</li>
+							</ul>
+						</li>
+						<li>
+							<h2>Oklahoma</h2>
+							<ul>
+								<li>Oklahoma City</li>
+								<li>Tulsa</li>
+							</ul>
+						</li>
+						<li>
+							<h2>Kansas</h2>
+							<ul>
+								<li>Wichita</li>
+								<li>Overland Park</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="amenities">
+					<h3>Amenities</h3>
+					<h4>Wifi, Pets Allowed, Non-Smoking....</h4>
+					<ul class="popover">
+						<li>Wifi</li>
+						<li>Pets Allowed</li>
+						<li>Non-Smoking</li>
+					</ul>
+				</div>
+				<button class="search-button">Search</button>
 			</section>
 
 			<section class="places">
+				<h1>Places</h1>
 				<article>
 					<div class="price_by_night">$100</div>
-					<h2>Place Name 1</h2>
+					<h2>My Home</h2>
 					<div class="information">
 						<div class="max_guest">
 							<img src="images/max_guest.png" alt="Guests Icon" />
@@ -40,12 +78,61 @@
 							<span>2 bathrooms</span>
 						</div>
 					</div>
-					<div class="user">Owner: <strong>Fake Owner</strong></div>
+					<div class="user">Owner: <strong>Fake Owner 1</strong></div>
 					<div class="description">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-						tristique felis sit amet est
+						tristique felis sit amet est.
 					</div>
 				</article>
+
+				<article>
+					<div class="price_by_night">$80</div>
+					<h2>Tiny House</h2>
+					<div class="information">
+						<div class="max_guest">
+							<img src="images/max_guest.png" alt="Guests Icon" />
+							<span>2 guests</span>
+						</div>
+						<div class="number_rooms">
+							<img src="images/max_bedrooms.png" alt="Bedrooms Icon" />
+							<span>1 bedroom</span>
+						</div>
+						<div class="number_bathrooms">
+							<img src="images/max_bathrooms.png" alt="Bathrooms Icon" />
+							<span>1 bathroom</span>
+						</div>
+					</div>
+					<div class="user">Owner: <strong>Fake Owner 2</strong></div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+						tristique felis sit amet est.
+					</div>
+				</article>
+
+				<article>
+					<div class="price_by_night">$120</div>
+					<h2>A Suite</h2>
+					<div class="information">
+						<div class="max_guest">
+							<img src="images/max_guest.png" alt="Guests Icon" />
+							<span>6 guests</span>
+						</div>
+						<div class="number_rooms">
+							<img src="images/max_bedrooms.png" alt="Bedrooms Icon" />
+							<span>3 bedrooms</span>
+						</div>
+						<div class="number_bathrooms">
+							<img src="images/max_bathrooms.png" alt="Bathrooms Icon" />
+							<span>2 bathrooms</span>
+						</div>
+					</div>
+					<div class="user">Owner: <strong>Fake Owner 3</strong></div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+						tristique felis sit amet est.
+					</div>
+				</article>
+
 				<!-- Add more articles for additional places -->
 			</section>
 		</div>
