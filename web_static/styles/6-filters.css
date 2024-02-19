@@ -10,7 +10,7 @@
 	display: none; /* initially hidden */
 	margin-left: -20px;
 	padding: 20px;
-	margin-top: -1px;
+	margin-top: 0px;
 }
 
 .popover ul {
