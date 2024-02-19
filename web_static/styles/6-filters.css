@@ -1,38 +1,30 @@
-/* styles/6-filters.css */
-.filters {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-}
-
-.filters > div {
-	width: 50%;
-	border: 1px solid #dddddd;
-	border-radius: 4px;
-	padding: 0px;
-	background-color: #fafafa;
-	position: relative;
-}
-
-.filters .popover {
+.popover {
 	display: none;
 	position: absolute;
 	top: 100%;
 	left: 0;
-	width: 100%;
 	background-color: #fafafa;
+	width: 100%;
 	border: 1px solid #dddddd;
 	border-radius: 4px;
-	padding: 10px;
-	z-index: 1;
-}
-
-.filters .popover li {
 	list-style-type: none;
-	padding: 5px 0;
 }
 
-.filters .locations:hover .popover,
-.filters .amenities:hover .popover {
+.locations:hover .popover,
+.amenities:hover .popover {
 	display: block;
+}
+
+.locations ul {
+	padding: 0;
+}
+
+.locations ul ul {
+	margin-left: 20px;
+	padding: 0;
+}
+
+h2 {
+	font-size: 16px;
+	margin-top: 0;
 }
