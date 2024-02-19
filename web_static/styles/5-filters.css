@@ -5,11 +5,16 @@
 	align-items: center;
 }
 
-.locations,
-.amenities {
+.locations {
 	height: 100%;
 	width: 25%;
 	margin-left: 20px;
+}
+
+.amenities {
+	height: 100%;
+	width: 25%;
+	margin-left: 0px;
 }
 
 .locations {
