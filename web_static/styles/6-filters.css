@@ -8,9 +8,6 @@
 	width: 20%; /* same as parent */
 	list-style: none !important;
 	display: none; /* initially hidden */
-	margin-left: 0px;
-	padding: 20px 20px 20px 20px;
-	margin-left: -20px;
 }
 
 .popover ul {
