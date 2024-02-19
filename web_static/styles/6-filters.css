@@ -13,12 +13,6 @@
 	list-style: none;
 }
 
-/* Show popover on hover */
-.filters .locations:hover .popover,
-.filters .amenities:hover .popover {
-	display: block;
-}
-
 /* State heading */
 .popover > h2 {
 	font-size: 16px;
