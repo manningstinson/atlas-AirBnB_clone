@@ -2,11 +2,17 @@
 
 .places {
 	margin-top: 30px;
+	display: flex;
+	flex-wrap: wrap; /* Allow items to wrap to the next line */
+	justify-content: center; /* Horizontal alignment */
+	align-items: center; /* Vertical alignment */
 }
 
 .places h1 {
 	font-size: 30px;
 	text-align: left;
+	width: 100%; /* Ensure title takes full width */
+	margin-bottom: 20px; /* Add space below the title */
 }
 
 .places article {
