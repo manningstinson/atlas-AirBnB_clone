@@ -2,6 +2,7 @@
 .filters {
 	display: flex;
 	align-items: center;
+	padding-block: 20px;
 }
 
 .locations {
@@ -9,14 +10,12 @@
 	width: 25%;
 	margin-left: 0px;
 	border-right: 1px solid #dddddd;
-	padding-left: 40px;
 }
 
 .amenities {
 	height: 100%;
 	width: 25%;
 	margin-left: 0px;
-	padding-left: 40px;
 }
 
 .locations h3,
