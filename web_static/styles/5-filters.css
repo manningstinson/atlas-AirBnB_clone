@@ -2,17 +2,18 @@
 .filters {
 	display: flex;
 	justify-content: space-between;
-	align-items: stretch;
+	align-items: center;
 }
 
 .locations,
 .amenities {
 	height: 100%;
 	width: 25%;
-	border-right: 1px solid #dddddd;
-	padding: 20px;
 }
 
+.locations {
+	border-right: 1px solid #dddddd;
+}
 .locations h3,
 .amenities h3 {
 	font-weight: 600;
