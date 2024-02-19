@@ -5,6 +5,15 @@
 	align-items: flex-start;
 }
 
+.filters > div {
+	width: 25%;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	padding: 0px;
+	background-color: #fafafa;
+	position: relative;
+}
+
 .filters h3 {
 	margin-bottom: 10px;
 }
