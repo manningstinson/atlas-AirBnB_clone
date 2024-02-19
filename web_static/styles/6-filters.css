@@ -12,23 +12,3 @@
 	color: #fafafa;
 	list-style: none;
 }
-
-/* Show popover on hover */
-.filters .locations:hover .popover,
-.filters .amenities:hover .popover {
-	display: block;
-}
-
-/* State heading */
-.popover > h2 {
-	font-size: 16px;
-}
-
-/* City list */
-.popover ul {
-	padding: 0;
-}
-
-.popover ul li {
-	margin-bottom: 5px;
-}
