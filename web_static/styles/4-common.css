@@ -1,11 +1,14 @@
-body {
+/* Common Styles */
+body,
+html {
 	margin: 0;
-	font-family: Arial, sans-serif;
+	padding: 0;
+	font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #484848;
 }
 
 .container {
-	width: 1000px;
+	width: 80%;
 	margin: 0 auto;
-	margin: 30px auto;
-	max-width: 1000px;
 }

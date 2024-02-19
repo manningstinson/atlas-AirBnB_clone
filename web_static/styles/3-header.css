@@ -1,18 +1,18 @@
 /* Header Styles */
 header {
-    background-color: white;
-    height: 70px;
-    width: 100%;
-    border-bottom: 1px solid #CCCCCC;
-    display: flex;
-    align-items: center;
+	background-color: white;
+	height: 70px;
+	width: 100%;
+	border-bottom: 1px solid #cccccc;
+	display: flex;
+	align-items: center;
 }
 
 .logo {
-    width: 100px; /* Adjust as per your logo size */
-    height: 50px; /* Adjust as per your logo size */
-    background-image: url("../images/logo.png"); /* Path to your logo image */
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-left: 20px;
+	width: 100px; /* Adjust as per your logo size */
+	height: 50px; /* Adjust as per your logo size */
+	background-image: url("../images/logo.png"); /* Path to your logo image */
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-left: 20px;
 }

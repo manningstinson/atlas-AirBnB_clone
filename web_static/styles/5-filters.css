@@ -1,26 +1,25 @@
+/* Filters Styles */
+.filters {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+}
+
 .locations,
 .amenities {
 	height: 100%;
 	width: 25%;
 	border-right: 1px solid #dddddd;
-	padding: 1rem;
-	box-sizing: border-box; /* Ensures padding doesn't affect width */
-	font-family: Arial, sans-serif; /* Assuming this is the desired font */
+	padding: 20px;
 }
 
-.locations:first-child {
-	border-right: none;
-}
-
-h3 {
+.locations h3,
+.amenities h3 {
 	font-weight: 600;
-	margin-bottom: 0.5rem;
-	color: #333; /* Assuming this is the desired color */
 }
 
-h4 {
+.locations h4,
+.amenities h4 {
 	font-weight: 400;
 	font-size: 14px;
-	margin-bottom: 1rem;
-	color: #666; /* Assuming this is the desired color */
 }
