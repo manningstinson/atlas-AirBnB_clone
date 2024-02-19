@@ -2,6 +2,10 @@
 
 .places {
 	margin-top: 30px;
+	display: flex;
+	flex-wrap: wrap; /* Allow items to wrap to the next line */
+	justify-content: center; /* Horizontal alignment */
+	align-items: center; /* Vertical alignment */
 }
 
 .places h1 {
