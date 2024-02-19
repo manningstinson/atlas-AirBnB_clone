@@ -9,11 +9,13 @@
 	width: 25%;
 	margin-left: 0px;
 	border-right: 1px solid #dddddd;
+	padding-left: 20;
 }
 
 .amenities {
 	height: 100%;
 	width: 25%;
+	padding-left: 20px;
 }
 
 .locations h3,
