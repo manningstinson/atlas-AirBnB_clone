@@ -5,7 +5,7 @@
 	border: 1px solid #dddddd;
 	border-radius: 4px;
 	width: 25%; /* same as parent */
-	list-style: none;
+	list-style: none !important;
 	padding: 0;
 	display: none; /* initially hidden */
 }
