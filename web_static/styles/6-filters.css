@@ -1,28 +1,57 @@
-/* styles/6-filters.css */
+/* Filters Styles */
+.filters {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
-/* Popover style */
+.locations,
+.amenities {
+	height: 100%;
+	width: 25%;
+	margin-left: 20px;
+	position: relative; /* added for popover */
+}
+
+.locations {
+	border-right: 1px solid #dddddd;
+}
+
+.locations h3,
+.amenities h3 {
+	font-weight: 600;
+}
+
+.locations h4,
+.amenities h4 {
+	font-weight: 400;
+	font-size: 14px;
+	margin-top: -20px;
+}
+
+/* Popover */
 .popover {
 	position: absolute;
 	background-color: #fafafa;
-	width: 100%;
 	border: 1px solid #dddddd;
 	border-radius: 4px;
-	padding: 10px;
-	display: none;
-	color: #fafafa;
+	width: 100%; /* same as parent */
 	list-style: none;
-}
-
-/* State heading */
-.popover > h2 {
-	font-size: 16px;
-}
-
-/* City list */
-.popover ul {
 	padding: 0;
+	display: none; /* initially hidden */
 }
 
-.popover ul li {
-	margin-bottom: 5px;
+.popover ul {
+	padding-left: 0;
+}
+
+.popover h2 {
+	font-size: 16px;
+	margin: 5px 0;
+}
+
+/* Show popover on hover */
+.locations:hover .popover,
+.amenities:hover .popover {
+	display: block;
 }
