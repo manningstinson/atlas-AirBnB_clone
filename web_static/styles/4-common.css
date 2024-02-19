@@ -36,7 +36,7 @@ html {
 	margin-right: 30px;
 	transition: opacity 0.3s ease;
 	float: right;
-	margin-top: 11px;
+	margin-top: 0px;
 }
 
 .filters button:hover {
