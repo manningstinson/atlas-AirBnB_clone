@@ -10,7 +10,8 @@
 	height: 100%;
 	width: 25%;
 	border-right: 1px solid #dddddd;
-	padding: 20px;
+	padding: 0px;
+	margin-top: -20px;
 }
 
 .locations h3,
