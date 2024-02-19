@@ -1,21 +1,3 @@
-/* styles/8-places.css */
-
-.places {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: flex-start;
-	margin-top: 30px;
-}
-
-.places article {
-	width: 390px;
-	padding: 20px;
-	margin: 20px;
-	border: 1px solid #ff5a5f;
-	border-radius: 4px;
-}
-
 .places article .information {
 	height: 80px;
 	border-top: 1px solid #dddddd;
@@ -24,25 +6,4 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 0;
-}
-
-.places article .information div {
-	width: 100px;
-	display: flex;
-	align-items: center;
-}
-
-.places article .information div img {
-	width: 30px;
-	height: 30px;
-	margin-right: 5px;
-}
-
-.places article .user {
-	font-weight: bold;
-}
-
-.places article .description {
-	margin-top: 10px;
-	font-size: 14px;
 }
