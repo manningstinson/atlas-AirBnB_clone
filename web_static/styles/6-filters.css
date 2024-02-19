@@ -1,50 +1,50 @@
-
 /* styles/6-filters.css */
 
 /* Filter container */
 .container .filters {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 /* Locations and Amenities */
 .filters .locations,
 .filters .amenities {
-  position: relative;
+	position: relative;
 }
 
 /* Popover style */
 .popover {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: none;
-  background-color: #fafafa;
-  width: 100%;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
-  padding: 10px;
-  list-style-type: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	display: none;
+	background-color: #fafafa;
+	width: 100%;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	padding: 10px;
+	list-style-type: none;
 }
 
 /* Show popover on hover */
 .filters .locations:hover .popover,
 .filters .amenities:hover .popover {
-  display: block;
+	display: block;
 }
 
 /* State heading */
 .popover > h2 {
-  font-size: 16px;
-  margin-bottom: 5px;
+	font-size: 16px;
+	margin-bottom: 5px;
 }
 
 /* City list */
 .popover ul {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 .popover ul li {
-  margin-bottom: 
+	margin-bottom: ;
+}
