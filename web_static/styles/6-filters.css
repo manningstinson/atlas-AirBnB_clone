@@ -4,7 +4,7 @@
 	background-color: #fafafa;
 	border: 1px solid #dddddd;
 	border-radius: 4px;
-	width: 100%; /* same as parent */
+	width: 25%; /* same as parent */
 	list-style: none;
 	padding: 0;
 	display: none; /* initially hidden */
