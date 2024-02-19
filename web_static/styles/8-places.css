@@ -1,10 +1,10 @@
-/* Places Styles */
 .places {
-	margin-top: 30px;
+	padding: 20px;
 }
 
 .places h1 {
 	font-size: 30px;
+	margin: 0;
 }
 
 .places article {
@@ -17,43 +17,42 @@
 
 .places article h2 {
 	font-size: 30px;
+	text-align: center;
 }
 
-.places .price_by_night {
+.price_by_night {
 	color: #ff5a5f;
 	border: 4px solid #ff5a5f;
 	border-radius: 4px;
 	min-width: 60px;
 	height: 60px;
 	font-size: 30px;
+	text-align: center;
 	float: right;
-	margin-top: -20px;
-	border: 3px solid #ff5a5f;
 }
 
-.places .information {
-	height: 80px;
+.information {
 	border-top: 1px solid #dddddd;
 	border-bottom: 1px solid #dddddd;
-	display: flex;
-	align-items: center;
+	height: 80px;
 }
 
-.places .information div {
+.information div {
+	display: inline-block;
 	width: 100px;
-	display: flex;
-	align-items: center;
-	margin-right: 20px;
+	vertical-align: middle;
+	text-align: center;
 }
 
-.places .information img {
-	margin-right: 5px;
+.information div img {
+	width: 24px;
+	height: 24px;
 }
 
-.places .user {
-	font-weight: bold;
+.user {
+	margin-top: 10px;
 }
 
-.places .description {
+.description {
 	margin-top: 10px;
 }
