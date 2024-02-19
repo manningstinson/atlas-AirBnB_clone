@@ -1,0 +1,35 @@
+/* Combine styles from both CSS files */
+
+.popover {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: #fafafa;
+	width: 100%;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	list-style-type: none;
+	padding: 10px; /* Added padding for better appearance */
+}
+
+.locations:hover .popover,
+.amenities:hover .popover {
+	display: block;
+}
+
+.locations ul,
+.amenities ul {
+	padding: 0;
+}
+
+.locations ul ul,
+.amenities ul ul {
+	margin-left: 20px;
+	padding: 0;
+}
+
+h2 {
+	font-size: 16px;
+	margin-top: 0;
+}
