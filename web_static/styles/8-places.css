@@ -1,11 +1,10 @@
-/* styles/7-places.css */
-
+/* Places Styles */
 .places {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: flex-start;
 	margin-top: 30px;
+}
+
+.places h1 {
+	font-size: 30px;
 }
 
 .places article {
@@ -14,55 +13,47 @@
 	margin: 20px;
 	border: 1px solid #ff5a5f;
 	border-radius: 4px;
-	position: relative; /* Added for positioning price_by_night */
 }
 
-.places article .price_by_night {
+.places article h2 {
 	font-size: 30px;
+}
+
+.places .price_by_night {
 	color: #ff5a5f;
 	border: 4px solid #ff5a5f;
 	border-radius: 4px;
 	min-width: 60px;
 	height: 60px;
-	text-align: center;
-	line-height: 60px;
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-
-.places article h2 {
 	font-size: 30px;
-	color: #ff5a5f; /* Changed text color to red */
+	float: right;
+	margin-top: -20px;
+	border: 3px solid #ff5a5f;
 }
 
-.places article .information {
+.places .information {
 	height: 80px;
 	border-top: 1px solid #dddddd;
 	border-bottom: 1px solid #dddddd;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	padding: 10px 0;
 }
 
-.places article .information div {
+.places .information div {
 	width: 100px;
 	display: flex;
 	align-items: center;
+	margin-right: 20px;
 }
 
-.places article .information div img {
-	width: 30px;
-	height: 30px;
+.places .information img {
 	margin-right: 5px;
 }
 
-.places article .user {
+.places .user {
 	font-weight: bold;
 }
 
-.places article .description {
+.places .description {
 	margin-top: 10px;
-	font-size: 14px;
 }
