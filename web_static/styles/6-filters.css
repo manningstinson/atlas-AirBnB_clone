@@ -9,22 +9,3 @@
 	border-radius: 4px;
 	list-style-type: none;
 }
-
-.locations:hover .popover,
-.amenities:hover .popover {
-	display: block;
-}
-
-.locations ul {
-	padding: 0;
-}
-
-.locations ul ul {
-	margin-left: 20px;
-	padding: 0;
-}
-
-h2 {
-	font-size: 16px;
-	margin-top: 0;
-}
