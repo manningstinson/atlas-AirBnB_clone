@@ -32,18 +32,3 @@
 .popover ul li {
 	margin-bottom: 5px;
 }
-
-/* Search button */
-.search-button {
-	margin-top: 10px;
-	padding: 10px 20px;
-	background-color: #ff5a5f;
-	color: #ffffff;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-}
-
-.search-button:hover {
-	background-color: #ff454a;
-}
