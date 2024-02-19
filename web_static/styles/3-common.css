@@ -1,3 +1,4 @@
+/* Common Styles */
 body,
 html {
 	margin: 0;
@@ -10,5 +11,6 @@ html {
 .container {
 	width: 1000px;
 	margin: 0 auto;
+	margin: 30px auto;
 	max-width: 1000px;
 }
