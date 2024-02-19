@@ -8,6 +8,7 @@
 	list-style: none !important;
 	padding: 10px;
 	display: none; /* initially hidden */
+	margin-left: -20px;
 }
 
 .popover ul {
